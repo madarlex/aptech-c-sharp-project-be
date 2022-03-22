@@ -1,7 +1,11 @@
 
+using Microsoft.EntityFrameworkCore;
+using MobileRecharge.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionStrings = builder.Configuration["ConnectionStrings:DefaultConnection"];
 builder.Services.AddControllers();
+builder.Services.AddDbContext<DatabaseContext>(x => x.UseSqlServer(connectionStrings));
 
 builder.Services.AddCors();
 // Add services to the container.
