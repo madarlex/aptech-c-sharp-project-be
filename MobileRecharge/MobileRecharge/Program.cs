@@ -13,6 +13,8 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddCors();
 // Add services to the container.
 builder.Services.AddScoped<PrepaidService, PrepaidServiceImpl>();
+builder.Services.AddScoped<AccountService, AccountServiceImpl>();
+builder.Services.AddScoped<PostPaidService, PostPaidServiceImpl>();
 builder.Services.AddDbContext<DatabaseContext>(option => option.UseLazyLoadingProxies().UseSqlServer(connectionStrings));
 
 var app = builder.Build();

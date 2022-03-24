@@ -14,6 +14,7 @@ namespace MobileRecharge.Services
 
         public bool CreateRechargeHistory(RechargeHistory rechargeHistory)
         {
+
             db.RechargeHistories.Add(rechargeHistory);
             if (db.SaveChanges() > 0)
             {
@@ -45,7 +46,8 @@ namespace MobileRecharge.Services
 
         public bool UpdateRechargeHistory(string id)
         {
-            var selectedRechargeHistory = db.RechargeHistories.OrderByDescending(p => p.Id).FirstOrDefault();
+
+            var selectedRechargeHistory = db.RechargeHistories.Where(p => p.AccountId == Int32.Parse(id)).OrderByDescending(p => p.Id).FirstOrDefault();
             if (selectedRechargeHistory != null)
             {
                 selectedRechargeHistory.Status = 1;
