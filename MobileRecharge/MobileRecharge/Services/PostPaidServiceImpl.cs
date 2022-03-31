@@ -1,15 +1,59 @@
 ﻿using MobileRecharge.Models;
-using MobileRecharge.Helpers;
-using MobileRecharge.SupportModels;
+using System.Diagnostics;
 
 namespace MobileRecharge.Services
 {
-    public class PostPaidServiceImpl : PostPaidService
+    public class PostpaidServiceImpl : PostpaidService
     {
-        private DatabaseContext db;
-        public PostPaidServiceImpl(DatabaseContext _db)
+        private readonly DatabaseContext databaseContext;
+        public PostpaidServiceImpl(DatabaseContext databaseContext)
         {
-            db = _db;
+            this.databaseContext = databaseContext;
+        }
+
+        public void createPostpaid(PostPaid postpaid)
+        {
+            databaseContext.PostPaids.Add(postpaid);
+            databaseContext.SaveChanges();
+        }
+
+        public PostPaid GetPostpaidById(int id)
+        {
+            var postpaid = databaseContext.PostPaids.FirstOrDefault(p => p.Id == id);
+            return postpaid;
+        }
+
+        public List<PostPaidHistory> GetPostPaidHistories()
+        {
+            return databaseContext.PostPaidHistories.ToList();
+        }
+
+        public List<PostPaidHistory> GetPostPaidHistoriesByPostpaidId(int postpaidId)
+        {
+            return databaseContext.PostPaidHistories.Where(p => p.PostPaidId == postpaidId).ToList();
+        }
+
+        public List<PostPaid> GetPostpaids()
+        {
+            return databaseContext.PostPaids.ToList();  
+        }
+
+        public bool updatePostpaid(PostPaid postpaid, int id)
+        {
+            var dbPostpaid = databaseContext.PostPaids.FirstOrDefault(p => p.Id == id); 
+            if (dbPostpaid == null)
+            {
+                return false;
+            }
+            else
+            {
+                dbPostpaid.Name = postpaid.Name;
+                dbPostpaid.Description = postpaid.Description;
+                dbPostpaid.Price = postpaid.Price;
+                dbPostpaid.Status = postpaid.Status;
+                databaseContext.SaveChanges();
+                return true;
+            }
         }
 
         public bool CreatePostPaidHistory(PostPaidHistory postPaidHistory)
@@ -31,7 +75,8 @@ namespace MobileRecharge.Services
 
         public dynamic FindAll()
         {
-            return db.PostPaids.Select(p => new SupPostPaid { 
+            return db.PostPaids.Select(p => new SupPostPaid
+            {
                 Id = p.Id,
                 Price = p.Price,
                 Status = p.Status,
@@ -48,7 +93,7 @@ namespace MobileRecharge.Services
                 selectedPostPaidHistory.Status = 1;
                 db.Entry(selectedPostPaidHistory).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 return db.SaveChanges() > 0;
-            } 
+            }
             else
             {
                 return false;
