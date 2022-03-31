@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MobileRecharge.Models
 {
@@ -12,6 +13,8 @@ namespace MobileRecharge.Models
         public string? Description { get; set; }
         public int Status { get; set; }
         public DateTime Date { get; set; }
+
+        [RegularExpression(@"\d{10}", ErrorMessage = "Wrong Mobile Number")]
         public string Phone { get; set; } = null!;
 
         public virtual Account? Account { get; set; } = null!;

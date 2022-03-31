@@ -5,9 +5,7 @@ using MobileRecharge.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionStrings = builder.Configuration["ConnectionStrings:DefaultConnection"];
-builder.Services.AddControllers().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
+builder.Services.AddControllers();
 
     
 builder.Services.AddCors();

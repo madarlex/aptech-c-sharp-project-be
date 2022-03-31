@@ -1,6 +1,7 @@
 ﻿using MobileRecharge.Models;
 using System.Diagnostics;
 using MobileRecharge.Helpers;
+using MobileRecharge.SupportModels;
 
 namespace MobileRecharge.Services
 {
@@ -34,14 +35,32 @@ namespace MobileRecharge.Services
             return db.Recharges.ToList();
         }
 
-        public List<Recharge> FindAllNormal()
+        public dynamic FindAllNormal()
         {
-            return db.Recharges.Where(p => p.RechargeTypeId == 1).ToList();
+            return db.Recharges.Where(p => p.RechargeTypeId == 1).Select(p => new SupRecharge {
+                Id = p.Id,
+                Minutes = p.Minutes,
+                Data = p.Data,
+                Status = p.Status,
+                Description = p.Description,
+                Name = p.Name,
+                Price = p.Price,
+                RechargeTypeId = p.RechargeTypeId}).ToList();
         }
 
-        public List<Recharge> FindAllSpecial()
+        public dynamic FindAllSpecial()
         {
-            return db.Recharges.Where(p => p.RechargeTypeId == 2).ToList();
+            return db.Recharges.Where(p => p.RechargeTypeId == 2).Select(p => new SupRecharge
+            {
+                Id = p.Id,
+                Minutes = p.Minutes,
+                Data = p.Data,
+                Status = p.Status,
+                Description = p.Description,
+                Name = p.Name,
+                Price = p.Price,
+                RechargeTypeId = p.RechargeTypeId
+            }).ToList();
         }
 
         public bool UpdateRechargeHistory(string id)

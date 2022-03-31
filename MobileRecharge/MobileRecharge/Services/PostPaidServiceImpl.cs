@@ -1,5 +1,6 @@
 ﻿using MobileRecharge.Models;
 using MobileRecharge.Helpers;
+using MobileRecharge.SupportModels;
 
 namespace MobileRecharge.Services
 {
@@ -17,7 +18,7 @@ namespace MobileRecharge.Services
             db.PostPaidHistories.Add(postPaidHistory);
             if (db.SaveChanges() > 0)
             {
-                EmailHelper.SendEmail("c2003lcodedao@gmail.com", "Prepaid Confirmation", "Code: " + postPaidHistory.Code.ToString());
+                EmailHelper.SendEmail("c2003lcodedao@gmail.com", "PostPaid Confirmation", "Code: " + postPaidHistory.Code.ToString());
                 return true;
             }
             return false;
@@ -28,9 +29,15 @@ namespace MobileRecharge.Services
             return db.PostPaidHistories.Find(id);
         }
 
-        public List<PostPaid> FindAll()
+        public dynamic FindAll()
         {
-            return db.PostPaids.ToList();
+            return db.PostPaids.Select(p => new SupPostPaid { 
+                Id = p.Id,
+                Price = p.Price,
+                Status = p.Status,
+                Description = p.Description,
+                Name = p.Name,
+            }).ToList();
         }
 
         public bool UpdatePostPaidHistory(string id)
