@@ -19,5 +19,9 @@ namespace MobileRecharge.Services
         public bool Forgot(string email, string token);
 
         public bool ChangePass(string email, string token, string password);
+        public List<Account> GetAllAccounts();
+        public Account GetAccountById(int id);
+        public List<RechargeHistory> GetRechargeHistoryById(int accountId);
+        public List<PostPaidHistory> GetPostPaidHistoryById(int accountId);
     }
 }

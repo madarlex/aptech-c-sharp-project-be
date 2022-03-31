@@ -7370,19 +7370,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
+    "C:\\Users\\antru\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Aptech C Sharp Project\\C Sharp API Project\\BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\MobileRecharge.csproj",
+      "projectUniqueName": "E:\\project_aptech\\be\\aptech-c-sharp-project-be\\aptech-c-sharp-project-be\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\MobileRecharge.csproj",
       "projectName": "MobileRecharge",
-      "projectPath": "C:\\Users\\ADMIN\\Desktop\\Aptech C Sharp Project\\C Sharp API Project\\BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\MobileRecharge.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\Desktop\\Aptech C Sharp Project\\C Sharp API Project\\BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\obj\\",
+      "projectPath": "E:\\project_aptech\\be\\aptech-c-sharp-project-be\\aptech-c-sharp-project-be\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\MobileRecharge.csproj",
+      "packagesPath": "C:\\Users\\antru\\.nuget\\packages\\",
+      "outputPath": "E:\\project_aptech\\be\\aptech-c-sharp-project-be\\aptech-c-sharp-project-be\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\antru\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7461,7 +7461,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

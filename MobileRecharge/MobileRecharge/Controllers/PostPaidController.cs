@@ -9,8 +9,8 @@ namespace MobileRecharge.Controllers
     [ApiController]
     public class PostPaidController : ControllerBase
     {
-        private PostPaidService postPaidService;
-        public PostPaidController(PostPaidService _postPaidService)
+        private PostpaidService postPaidService;
+        public PostPaidController(PostpaidService _postPaidService)
         {
             postPaidService = _postPaidService;
         }

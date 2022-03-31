@@ -59,6 +59,7 @@ namespace MobileRecharge.Services
         }
 
         public dynamic FindAll()
+        
         {
             return db.Accounts.Select(a => new {
                 Id = a.Id,
@@ -66,18 +67,31 @@ namespace MobileRecharge.Services
                 Address = a.Address,
                 Dob = a.Dob
             }).ToList();
+            
+        }
+
+        public Account GetAccountById(int id)
+        {
+            return db.Accounts.FirstOrDefault(a => a.Id == id);
         }
 
         public bool Forgot(string email, string token)
         {
             var account = db.Accounts.SingleOrDefault(a => a.Email == email);
             if (account != null)
-            {
+        
+        {
                 account.ResetToken = token;
                 db.SaveChanges();
                 return true;
             }
             return false;
+            
+        }
+
+        public List<Account> GetAllAccounts()
+        {
+            return db.Accounts.ToList();
         }
 
         public Account Login(string email, string password)
@@ -86,17 +100,29 @@ namespace MobileRecharge.Services
             if (account != null)
             {
                 if (BCrypt.Net.BCrypt.Verify(password, account.Password) && account.Status == 1)
-                {
+        
+        {
                     return account;
                 }
             }
             return null;
+            
         }
 
+        public List<PostPaidHistory> GetPostPaidHistoryById(int accountId) {
+            return db.PostPaidHistories.Where(a => a.AccountId == accountId).ToList();
+        }
         public void Update(Account account)
+        
         {
             db.Entry(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             db.SaveChanges();
+           
+        }
+
+        public List<RechargeHistory> GetRechargeHistoryById(int accountId)
+        {
+            return db.RechargeHistories.Where(a => a.AccountId == accountId).ToList();
         }
     }
 }
