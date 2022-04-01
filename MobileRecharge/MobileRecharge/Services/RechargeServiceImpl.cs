@@ -6,9 +6,9 @@ namespace MobileRecharge.Services
     public class RechargeServiceImpl : RechargeService
     {
         private readonly DatabaseContext databaseContext;
-        public RechargeServiceImpl(DatabaseContext databaseContext)
+        public RechargeServiceImpl(DatabaseContext _databaseContext)
         {
-            this.databaseContext = databaseContext;
+            databaseContext = _databaseContext;
         }
 
         public void createRecharge(Recharge recharge)
