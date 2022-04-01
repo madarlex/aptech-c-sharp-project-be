@@ -8,5 +8,6 @@ namespace MobileRecharge.Services
 
         public Feedback GetFeedback(int id);
 
+        public bool Create(Feedback feedback);
     }
 }

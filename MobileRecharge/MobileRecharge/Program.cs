@@ -19,6 +19,9 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 
     
 builder.Services.AddCors();
+
+builder.Services.AddRazorPages();
+
 // Add services to the container.
 builder.Services.AddScoped<PrepaidService, PrepaidServiceImpl>();
 builder.Services.AddScoped<AccountService, AccountServiceImpl>();

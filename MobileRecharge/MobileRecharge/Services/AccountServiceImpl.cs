@@ -40,6 +40,11 @@ namespace MobileRecharge.Services
             return false;
         }
 
+        public bool CheckUniqueEmail(string email)
+        {
+            return db.Accounts.Any(a => a.Email == email);
+        }
+
         public bool Create(Account account)
         {
             try

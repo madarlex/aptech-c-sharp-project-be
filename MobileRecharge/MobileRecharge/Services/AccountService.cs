@@ -23,5 +23,7 @@ namespace MobileRecharge.Services
         public Account GetAccountById(int id);
         public List<RechargeHistory> GetRechargeHistoryById(int accountId);
         public List<PostPaidHistory> GetPostPaidHistoryById(int accountId);
+
+        public bool CheckUniqueEmail(string email);
     }
 }

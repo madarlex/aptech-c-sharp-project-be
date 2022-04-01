@@ -12,15 +12,30 @@ namespace MobileRecharge.Services
         public Feedback GetFeedback(int id)
         {
             if(_databaseContext != null)
+         
             {
                 return _databaseContext.Feedbacks.FirstOrDefault(x => x.Id == id);
             }
             return null;
-        }
+                
+            }
 
         public List<Feedback> GetFeedbacks()
-        {
+            
+            {
             return _databaseContext.Feedbacks.ToList();
+            }
+        }
+        public bool Create(Feedback feedback) {
+            try
+            {
+                db.Feedbacks.Add(feedback);
+                return db.SaveChanges() > 0;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

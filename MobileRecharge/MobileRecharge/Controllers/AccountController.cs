@@ -37,19 +37,29 @@ namespace MobileRecharge.Controllers
         {
             try
             {
-                string token = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
-                if (token.Contains('/'))
+                if (!accountService.CheckUniqueEmail(account.Email))
                 {
-                    token = token.Replace('/', 'a');
+                    string token = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+                    if (token.Contains('/'))
+                    {
+                        token = token.Replace('/', 'a');
+                    }
+                    string message = "Account registration confirmation code: " + token;
+                    SendEmail(account.Email, "Confirm account creation", message);
+                    account.ActiveToken = token;
+                    account.Password = BCrypt.Net.BCrypt.HashString(account.Password);
+                    return Ok(new
+                    {
+                        Result = accountService.Create(account)
+                    });
                 }
-                string message = "Account registration confirmation code: " + token;
-                SendEmail(account.Email, "Confirm account creation", message);
-                account.ActiveToken = token;
-                account.Password = BCrypt.Net.BCrypt.HashString(account.Password);
-                return Ok(new
+                else
                 {
-                    Result = accountService.Create(account)
-                });
+                    return Ok(new
+                    {
+                        Result = false
+                    });
+                }
             }
             catch
             {
@@ -82,7 +92,6 @@ namespace MobileRecharge.Controllers
         {
             try
             {
-                Debug.WriteLine(password);
                 return Ok(new
                 {
                     Result = accountService.ChangePass(email, token, password)
@@ -220,6 +229,7 @@ namespace MobileRecharge.Controllers
                 }
                 currentAccount.IdentityCard = account.IdentityCard;
                 currentAccount.Address = account.Address;
+                currentAccount.Dob = account.Dob;
                 accountService.Update(currentAccount);
                 return Ok(new
                 {
