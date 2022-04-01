@@ -5,9 +5,9 @@ namespace MobileRecharge.Services
     public class AboutUsServiceImpl : AboutUsService
     {
         private readonly DatabaseContext databaseContext;
-        public AboutUsServiceImpl(DatabaseContext databaseContext)
+        public AboutUsServiceImpl(DatabaseContext _databaseContext)
         {
-            this.databaseContext = databaseContext;
+            databaseContext = _databaseContext;
         }
 
         public List<AboutU> GetAll()
