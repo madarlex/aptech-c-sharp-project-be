@@ -19,7 +19,7 @@ namespace MobileRecharge.Models
         public double Price { get; set; }
         public int RechargeTypeId { get; set; }
 
-        public virtual RechargeType RechargeType { get; set; } = null!;
-        public virtual ICollection<RechargeHistory> RechargeHistories { get; set; }
+        public virtual RechargeType? RechargeType { get; set; } = null!;
+        public virtual ICollection<RechargeHistory>? RechargeHistories { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using MobileRecharge.Models;
+﻿using MobileRecharge.Helpers;
+using MobileRecharge.Models;
+using MobileRecharge.SupportModels;
 using System.Diagnostics;
 
 namespace MobileRecharge.Services
@@ -17,7 +19,7 @@ namespace MobileRecharge.Services
             databaseContext.SaveChanges();
         }
 
-        public PostPaid GetPostpaidById(int id)
+        public PostPaid GetPostpaidatabaseContextyId(int id)
         {
             var postpaid = databaseContext.PostPaids.FirstOrDefault(p => p.Id == id);
             return postpaid;
@@ -40,17 +42,17 @@ namespace MobileRecharge.Services
 
         public bool updatePostpaid(PostPaid postpaid, int id)
         {
-            var dbPostpaid = databaseContext.PostPaids.FirstOrDefault(p => p.Id == id); 
-            if (dbPostpaid == null)
+            var databaseContextPostpaid = databaseContext.PostPaids.FirstOrDefault(p => p.Id == id); 
+            if (databaseContextPostpaid == null)
             {
                 return false;
             }
             else
             {
-                dbPostpaid.Name = postpaid.Name;
-                dbPostpaid.Description = postpaid.Description;
-                dbPostpaid.Price = postpaid.Price;
-                dbPostpaid.Status = postpaid.Status;
+                databaseContextPostpaid.Name = postpaid.Name;
+                databaseContextPostpaid.Description = postpaid.Description;
+                databaseContextPostpaid.Price = postpaid.Price;
+                databaseContextPostpaid.Status = postpaid.Status;
                 databaseContext.SaveChanges();
                 return true;
             }
@@ -59,8 +61,8 @@ namespace MobileRecharge.Services
         public bool CreatePostPaidHistory(PostPaidHistory postPaidHistory)
         {
 
-            db.PostPaidHistories.Add(postPaidHistory);
-            if (db.SaveChanges() > 0)
+            databaseContext.PostPaidHistories.Add(postPaidHistory);
+            if (databaseContext.SaveChanges() > 0)
             {
                 EmailHelper.SendEmail("c2003lcodedao@gmail.com", "PostPaid Confirmation", "Code: " + postPaidHistory.Code.ToString());
                 return true;
@@ -70,12 +72,12 @@ namespace MobileRecharge.Services
 
         public PostPaidHistory Find(int id)
         {
-            return db.PostPaidHistories.Find(id);
+            return databaseContext.PostPaidHistories.Find(id);
         }
 
         public dynamic FindAll()
         {
-            return db.PostPaids.Select(p => new SupPostPaid
+            return databaseContext.PostPaids.Select(p => new SupPostPaid
             {
                 Id = p.Id,
                 Price = p.Price,
@@ -87,17 +89,22 @@ namespace MobileRecharge.Services
 
         public bool UpdatePostPaidHistory(string id)
         {
-            var selectedPostPaidHistory = db.PostPaidHistories.Where(p => p.AccountId == Int32.Parse(id)).OrderByDescending(p => p.Id).FirstOrDefault();
+            var selectedPostPaidHistory = databaseContext.PostPaidHistories.Where(p => p.AccountId == Int32.Parse(id)).OrderByDescending(p => p.Id).FirstOrDefault();
             if (selectedPostPaidHistory != null)
             {
                 selectedPostPaidHistory.Status = 1;
-                db.Entry(selectedPostPaidHistory).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                return db.SaveChanges() > 0;
+                databaseContext.Entry(selectedPostPaidHistory).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                return databaseContext.SaveChanges() > 0;
             }
             else
             {
                 return false;
             }
+        }
+
+        public PostPaid GetPostpaidById(int id)
+        {
+            return databaseContext.PostPaids.FirstOrDefault(p => p.Id == id);
         }
     }
 }

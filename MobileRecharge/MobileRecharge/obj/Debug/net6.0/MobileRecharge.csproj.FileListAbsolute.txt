@@ -58,3 +58,8 @@ E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-
 E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\MobileRecharge\MobileRecharge\obj\Debug\net6.0\MobileRecharge.pdb
 E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\MobileRecharge\MobileRecharge\obj\Debug\net6.0\MobileRecharge.genruntimeconfig.cache
 E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\MobileRecharge\MobileRecharge\obj\Debug\net6.0\ref\MobileRecharge.dll
+E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\MobileRecharge\MobileRecharge\bin\Debug\net6.0\BCrypt.Net-Core.dll
+E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\MobileRecharge\MobileRecharge\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\MobileRecharge\MobileRecharge\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\MobileRecharge\MobileRecharge\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\project_aptech\be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\aptech-c-sharp-project-be\MobileRecharge\MobileRecharge\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
