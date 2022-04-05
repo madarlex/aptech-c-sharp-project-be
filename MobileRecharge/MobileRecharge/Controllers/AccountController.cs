@@ -141,7 +141,8 @@ namespace MobileRecharge.Controllers
                     return Ok(new
                     {
                         name = account.Name,
-                        accountId = account.Id
+                        accountId = account.Id,
+                        accountType = account.AccountType.Id
                     });
                 }
                 else

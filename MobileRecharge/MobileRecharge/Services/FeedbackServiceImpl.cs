@@ -9,6 +9,20 @@ namespace MobileRecharge.Services
         {
             _databaseContext = databaseContext;
         }
+
+        public bool Create(Feedback feedback)
+        {
+            try
+            {
+                _databaseContext.Feedbacks.Add(feedback);
+                return _databaseContext.SaveChanges() > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public Feedback GetFeedback(int id)
         {
             if(_databaseContext != null)
@@ -26,16 +40,4 @@ namespace MobileRecharge.Services
             return _databaseContext.Feedbacks.ToList();
             }
         }
-        public bool Create(Feedback feedback) {
-            try
-            {
-                db.Feedbacks.Add(feedback);
-                return db.SaveChanges() > 0;
-            }
-            catch
-            {
-                return false;
-            }
-        }
     }
-}

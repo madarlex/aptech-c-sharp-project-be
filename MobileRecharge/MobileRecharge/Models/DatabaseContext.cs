@@ -39,18 +39,16 @@ namespace MobileRecharge.Models
         {
             modelBuilder.Entity<AboutU>(entity =>
             {
+                entity.ToTable("AboutU");
+
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Maincontent)
-                    .HasColumnType("text")
-                    .HasColumnName("maincontent");
+                entity.Property(e => e.Maincontent).HasColumnType("text");
             });
 
             modelBuilder.Entity<Account>(entity =>
             {
                 entity.ToTable("Account");
-
-                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.ActiveToken)
                     .HasMaxLength(250)

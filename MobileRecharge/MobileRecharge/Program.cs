@@ -11,7 +11,7 @@ builder.Services.AddDbContext<DatabaseContext>(option => option.UseLazyLoadingPr
 builder.Services.AddControllers().AddJsonOptions(x =>
                {
                    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-                   x.JsonSerializerOptions.Converters.Add(new DateConverters());
+                   x.JsonSerializerOptions.Converters.Add(new DateConverter());
                });
 
 

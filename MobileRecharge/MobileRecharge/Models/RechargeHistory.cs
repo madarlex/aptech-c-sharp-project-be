@@ -14,7 +14,7 @@ namespace MobileRecharge.Models
         public DateTime Date { get; set; }
         public string Phone { get; set; } = null!;
 
-        public virtual Account Account { get; set; } = null!;
-        public virtual Recharge Recharge { get; set; } = null!;
+        public virtual Account? Account { get; set; } = null!;
+        public virtual Recharge? Recharge { get; set; } = null!;
     }
 }

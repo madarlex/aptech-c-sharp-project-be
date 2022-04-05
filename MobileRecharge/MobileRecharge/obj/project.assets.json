@@ -7232,7 +7232,6 @@
     "net6.0": [
       "BCrypt.Net-Core >= 1.6.0",
       "Microsoft.EntityFrameworkCore >= 6.0.3",
-      "Microsoft.EntityFrameworkCore.Design >= 6.0.3",
       "Microsoft.EntityFrameworkCore.Proxies >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
@@ -7287,12 +7286,6 @@
             "target": "Package",
             "version": "[6.0.3, )"
           },
-          "Microsoft.EntityFrameworkCore.Design": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[6.0.3, )"
-          },
           "Microsoft.EntityFrameworkCore.Proxies": {
             "target": "Package",
             "version": "[6.0.3, )"
@@ -7337,13 +7330,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\ADMIN\\Desktop\\Fix bug BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
