@@ -10,7 +10,6 @@
         "dependencies": {
           "BCrypt.Net-Core": "1.6.0",
           "Microsoft.EntityFrameworkCore": "6.0.3",
-          "Microsoft.EntityFrameworkCore.Design": "6.0.3",
           "Microsoft.EntityFrameworkCore.Proxies": "6.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",

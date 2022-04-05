@@ -11,7 +11,7 @@ builder.Services.AddDbContext<DatabaseContext>(option => option.UseLazyLoadingPr
 builder.Services.AddControllers().AddJsonOptions(x =>
                {
                    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-                   x.JsonSerializerOptions.Converters.Add(new DateConverters());
+                   x.JsonSerializerOptions.Converters.Add(new DateConverter());
                });
 
 
@@ -19,6 +19,9 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 
     
 builder.Services.AddCors();
+
+builder.Services.AddRazorPages();
+
 // Add services to the container.
 builder.Services.AddScoped<PrepaidService, PrepaidServiceImpl>();
 builder.Services.AddScoped<AccountService, AccountServiceImpl>();

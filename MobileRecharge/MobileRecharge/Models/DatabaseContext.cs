@@ -31,7 +31,7 @@ namespace MobileRecharge.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=MADARLEX;Database= RechargeMobile;user id=sa;password=123456");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-COPR973\\SQLEXPRESS;Database=RechargeMobile;user id=sa;password=123456");
             }
         }
 
@@ -43,9 +43,7 @@ namespace MobileRecharge.Models
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Maincontent)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
+                entity.Property(e => e.Maincontent).HasColumnType("text");
             });
 
             modelBuilder.Entity<Account>(entity =>

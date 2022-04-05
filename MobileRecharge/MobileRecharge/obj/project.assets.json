@@ -7232,7 +7232,6 @@
     "net6.0": [
       "BCrypt.Net-Core >= 1.6.0",
       "Microsoft.EntityFrameworkCore >= 6.0.3",
-      "Microsoft.EntityFrameworkCore.Design >= 6.0.3",
       "Microsoft.EntityFrameworkCore.Proxies >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
@@ -7246,11 +7245,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Aptech C Sharp Project\\C Sharp API Project\\BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\MobileRecharge.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Fix bug BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\MobileRecharge.csproj",
       "projectName": "MobileRecharge",
-      "projectPath": "C:\\Users\\ADMIN\\Desktop\\Aptech C Sharp Project\\C Sharp API Project\\BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\MobileRecharge.csproj",
+      "projectPath": "C:\\Users\\ADMIN\\Desktop\\Fix bug BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\MobileRecharge.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\Desktop\\Aptech C Sharp Project\\C Sharp API Project\\BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\obj\\",
+      "outputPath": "C:\\Users\\ADMIN\\Desktop\\Fix bug BE\\aptech-c-sharp-project-be\\MobileRecharge\\MobileRecharge\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7284,12 +7283,6 @@
             "version": "[1.6.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[6.0.3, )"
-          },
-          "Microsoft.EntityFrameworkCore.Design": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.3, )"
           },
@@ -7334,7 +7327,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
