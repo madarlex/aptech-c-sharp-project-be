@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileRecharge", "MobileRecharge\MobileRecharge.csproj", "{CBE4180C-553B-4199-8CBE-376FE8887FF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBE4180C-553B-4199-8CBE-376FE8887FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE4180C-553B-4199-8CBE-376FE8887FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE4180C-553B-4199-8CBE-376FE8887FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE4180C-553B-4199-8CBE-376FE8887FF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CFEDEDA-D7D1-4635-94D8-9B500A21EB8F}
+	EndGlobalSection
+EndGlobal
